@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1223.33333333333,1187.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1766,1187.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -147,7 +147,7 @@
           <OutArgument x:TypeArguments="x:String">[CreationDate]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[if(not in_TransactionItem.SpecificContent("CreationDate") is Nothing, Convert.ToDateTime(in_TransactionItem.SpecificContent("CreationDate")).ToString("MM/dd/yyyy"), Nothing)]</InArgument>
+          <InArgument x:TypeArguments="x:String">[if(not in_TransactionItem.SpecificContent("CreationDate") is Nothing andAlso not String.IsNullOrWhiteSpace(in_TransactionItem.SpecificContent("CreationDate").ToString), Convert.ToDateTime(in_TransactionItem.SpecificContent("CreationDate")).ToString("MM/dd/yyyy"), Nothing)]</InArgument>
         </Assign.Value>
       </Assign>
       <Assign DisplayName="Assign Address" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_8">
