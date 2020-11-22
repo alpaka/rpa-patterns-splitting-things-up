@@ -1,0 +1,460 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upaf="clr-namespace:UiPath.Persistence.Activities.FormTask;assembly=UiPath.Persistence.Activities" xmlns:upaq="clr-namespace:UiPath.Persistence.Activities.Queue;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="SupplierFilePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1766,4931.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="41">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Persistence.Activities.Model.Task</x:String>
+      <x:String>UiPath.Persistence.Activities.FormTask</x:String>
+      <x:String>UiPath.Persistence.Activities.BaseTask</x:String>
+      <x:String>UiPath.Persistence.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Persistence.Orchestrator.Client.Models</x:String>
+      <x:String>UiPath.Persistence.Activities.Queue</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Orchestrator.Client</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="1016.66666666667,4766.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Validation+Worker+Reporting" sap:VirtualizedContainerService.HintSize="974.666666666667,4200" sap2010:WorkflowViewState.IdRef="Sequence_14">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="scg:List(upaq:QueueItemData)" Default="[new List(Of QueueItemData)]" Name="ReportingQueueTasks" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Validation+Worker" sap:VirtualizedContainerService.HintSize="932.666666666667,3564.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="scg:List(upaq:QueueItemData)" Default="[new List(Of QueueItemData)]" Name="SupplierQueueTasks" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence DisplayName="Validation" sap:VirtualizedContainerService.HintSize="890.666666666667,2236" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="scg:List(upaf:FormTaskData)" Default="[new List(Of FormTaskData)]" Name="SupplierTasks" />
+            <Variable x:TypeArguments="x:String" Name="action" />
+            <Variable x:TypeArguments="upaf:FormTaskData" Name="taskResult" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="CreateValidationTasks" sap:VirtualizedContainerService.HintSize="848.666666666667,997.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="dtSuppliers" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ReadSupplierData workflow" sap:VirtualizedContainerService.HintSize="426.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ReadSupplierData.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="dtSuppliers">[dtSuppliers]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="SupplierFilePath">[SupplierFilePath]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtSuppliers]" DisplayName="For Each Row Supplier" sap:VirtualizedContainerService.HintSize="426.666666666667,751.333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body for each supplier" sap:VirtualizedContainerService.HintSize="376,598.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="upaf:FormTaskData" Name="taskOb" />
+                      <Variable x:TypeArguments="x:String" Name="Zip" />
+                      <Variable x:TypeArguments="x:String" Name="InternalName" />
+                      <Variable x:TypeArguments="x:String" Name="ExternalName" />
+                      <Variable x:TypeArguments="x:String" Name="Description" />
+                      <Variable x:TypeArguments="x:String" Name="NumEmployees" />
+                      <Variable x:TypeArguments="x:Boolean" Name="IsRecurrentSupplier" />
+                      <Variable x:TypeArguments="x:String" Name="Industry" />
+                      <Variable x:TypeArguments="x:String" Name="CreationDate" />
+                      <Variable x:TypeArguments="x:String" Name="Address" />
+                      <Variable x:TypeArguments="x:String" Name="Address2" />
+                      <Variable x:TypeArguments="x:String" Name="City" />
+                      <Variable x:TypeArguments="x:String" Name="State" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="AssignVariables" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Assign InternalName" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[InternalName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("Internal Name").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign ExternalName" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[ExternalName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("External Name").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign Description" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[Description]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("Description").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign industry" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_4">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[industry]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("Industry").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign NumEmployees" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[NumEmployees]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("No. Employees").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign IsRecurrentSupplier" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_6">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[IsRecurrentSupplier]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">[Convert.ToBoolean(row("Recurrent Supplier"))]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign CreationDate" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_7">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[CreationDate]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[if(not String.IsNullOrWhiteSpace(row("Date").ToString), Convert.ToDateTime(row("Date")).ToString("MM/dd/yyyy"), Nothing)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign Address" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_8">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[Address]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("Address").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign Address2" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_9">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[Address2]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("Address 2").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign City" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_10">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[City]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("City").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign State" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_11">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[State]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("State").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign Zip" sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_12">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[Zip]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("Zip").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                    <upaf:CreateFormTask BucketFolderPath="{x:Null}" BucketName="{x:Null}" TimeoutMs="{x:Null}" DisplayName="Create Form Task supplier validation" FormLayout="%[{&quot;columns&quot;:[{&quot;components&quot;:[{&quot;label&quot;:&quot;InternalName&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;InternalName&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Description&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Description&quot;,&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true},{&quot;label&quot;:&quot;Industry&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;Industry&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;Address&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;Address&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Address2&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;Address2&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;},{&quot;components&quot;:[{&quot;label&quot;:&quot;ExternalName&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;ExternalName&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;NumEmployees&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;NumEmployees&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;IsRecurrentSupplier&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;checkbox&quot;,&quot;key&quot;:&quot;IsRecurrentSupplier&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;CreationDate&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;CreationDate&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html1&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;City&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;City&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Zip&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;Zip&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;State&quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;State&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;}],&quot;tableView&quot;:false,&quot;key&quot;:&quot;columns&quot;,&quot;type&quot;:&quot;columns&quot;,&quot;input&quot;:false,&quot;label&quot;:&quot;Columns&quot;,&quot;calculateServer&quot;:false},{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;label&quot;:&quot;Approve&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;disableOnInvalid&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;approve&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;type&quot;:&quot;button&quot;,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;calculateServer&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Reject&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;reject&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;}]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false,&quot;calculateServer&quot;:false}]" sap:VirtualizedContainerService.HintSize="334,382.666666666667" sap2010:WorkflowViewState.IdRef="CreateFormTask_1" TaskCatalog="[&quot;SupplierChanges&quot;]" TaskOutput="[taskOb]" TaskPriority="[TaskPriority.Medium]" TaskTitle="Validate Supplier Change/Creation">
+                      <upaf:CreateFormTask.FormData>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="CreationDate">[CreationDate]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="Address">[Address]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="Address2">[Address2]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="City">[City]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="State">[State]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="Zip">[Zip]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="InternalName">[InternalName]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="ExternalName">[ExternalName]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="Description">[Description]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="NumEmployees">[NumEmployees]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:Boolean" x:Key="IsRecurrentSupplier">[IsRecurrentSupplier]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="Industry">[Industry]</InOutArgument>
+                      </upaf:CreateFormTask.FormData>
+                    </upaf:CreateFormTask>
+                    <AddToCollection x:TypeArguments="upaf:FormTaskData" Collection="[SupplierTasks]" DisplayName="Add To Collection task" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[taskOb]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+          </Sequence>
+          <ParallelForEach x:TypeArguments="upaf:FormTaskData" DisplayName="Parallel For Each Supplier Form" sap:VirtualizedContainerService.HintSize="848.666666666667,1106.66666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_1" Values="[SupplierTasks]">
+            <ActivityAction x:TypeArguments="upaf:FormTaskData">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="upaf:FormTaskData" Name="item" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="For Each Supplier Form" sap:VirtualizedContainerService.HintSize="798,954" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="Zip" />
+                  <Variable x:TypeArguments="x:String" Name="InternalName" />
+                  <Variable x:TypeArguments="x:String" Name="ExternalName" />
+                  <Variable x:TypeArguments="x:String" Name="Description" />
+                  <Variable x:TypeArguments="x:String" Name="NumEmployees" />
+                  <Variable x:TypeArguments="x:Boolean" Name="IsRecurrentSupplier" />
+                  <Variable x:TypeArguments="x:String" Name="Industry" />
+                  <Variable x:TypeArguments="x:String" Name="CreationDate" />
+                  <Variable x:TypeArguments="x:String" Name="Address" />
+                  <Variable x:TypeArguments="x:String" Name="Address2" />
+                  <Variable x:TypeArguments="x:String" Name="City" />
+                  <Variable x:TypeArguments="x:String" Name="State" />
+                  <Variable x:TypeArguments="upaq:QueueItemData" Name="queueOb" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <upaf:WaitForFormTaskAndResume StatusMessage="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Wait for Form Task and Resume Supplier Form" sap:VirtualizedContainerService.HintSize="756,228.666666666667" sap2010:WorkflowViewState.IdRef="WaitForFormTaskAndResume_1" TaskAction="[action]" TaskInput="[item]" TaskOutput="[taskResult]" />
+                <If Condition="[action = &quot;approve&quot;]" DisplayName="If approved" sap:VirtualizedContainerService.HintSize="756,593.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,439.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <upaq:AddQueueItemAndGetReference TimeoutMs="{x:Null}" DisplayName="Add Queue Item And Get Reference Worker" sap:VirtualizedContainerService.HintSize="334,285.333333333333" sap2010:WorkflowViewState.IdRef="AddQueueItemAndGetReference_2" Priority="Normal" QueueItemOutput="[queueOb]" QueueName="Supply_Drama_Q">
+                        <upaq:AddQueueItemAndGetReference.ItemInformation>
+                          <InArgument x:TypeArguments="x:String" x:Key="CreationDate">[CreationDate]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Address">[Address]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Address2">[Address2]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="City">[City]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="State">[State]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Zip">[Zip]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="InternalName">[InternalName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ExternalName">[ExternalName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Description">[Description]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="NumEmployees">[NumEmployees]</InArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="IsRecurrentSupplier">[IsRecurrentSupplier]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Industry">[Industry]</InArgument>
+                        </upaq:AddQueueItemAndGetReference.ItemInformation>
+                      </upaq:AddQueueItemAndGetReference>
+                      <AddToCollection x:TypeArguments="upaq:QueueItemData" Collection="[SupplierQueueTasks]" DisplayName="Add To Collection queues" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[queueOb]" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Approval not granted for Supplier &quot; &amp; InternalName]" />
+                  </If.Else>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </ParallelForEach>
+        </Sequence>
+        <ParallelForEach x:TypeArguments="upaq:QueueItemData" DisplayName="Parallel For Each supplier queue item" sap:VirtualizedContainerService.HintSize="890.666666666667,1196.66666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_2" Values="[SupplierQueueTasks]">
+          <ActivityAction x:TypeArguments="upaq:QueueItemData">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="upaq:QueueItemData" Name="item" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="For Each Supplier queue item" sap:VirtualizedContainerService.HintSize="376,1044" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="upaq:QueueItemData" Name="queueResult" />
+                <Variable x:TypeArguments="x:String" Name="QueueID" />
+                <Variable x:TypeArguments="x:String" Name="InternalName" />
+                <Variable x:TypeArguments="x:String" Name="CreationDate" />
+                <Variable x:TypeArguments="upaq:QueueItemData" Name="queueOb" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <upaq:WaitForQueueItemAndResume StatusMessage="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Wait For Queue Item And Resume Worker" sap:VirtualizedContainerService.HintSize="334,166.666666666667" sap2010:WorkflowViewState.IdRef="WaitForQueueItemAndResume_1" QueueItemInput="[item]" QueueItemOutput="[queueResult]" />
+              <Sequence DisplayName="AssignQueueVariables" sap:VirtualizedContainerService.HintSize="334,358" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Assign queueID" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_13">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[queueID]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[queueResult.ItemKey.ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign InternalName" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_14">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[InternalName]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[queueResult.SpecificContent("InternalName").ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign CreationDate" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_15">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[CreationDate]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[queueResult.SpecificContent("CreationDate").ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+              <upaq:AddQueueItemAndGetReference TimeoutMs="{x:Null}" DisplayName="Add Queue Item And Get Reference Reporter" sap:VirtualizedContainerService.HintSize="334,285.333333333333" sap2010:WorkflowViewState.IdRef="AddQueueItemAndGetReference_3" Priority="Normal" QueueItemOutput="[queueOb]" QueueName="Supplier_Rep_Q" Reference="[QueueID]">
+                <upaq:AddQueueItemAndGetReference.ItemInformation>
+                  <InArgument x:TypeArguments="x:String" x:Key="InternalName">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InternalName" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="CreationDate">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CreationDate" />
+                  </InArgument>
+                </upaq:AddQueueItemAndGetReference.ItemInformation>
+              </upaq:AddQueueItemAndGetReference>
+              <AddToCollection x:TypeArguments="upaq:QueueItemData" Collection="[ReportingQueueTasks]" DisplayName="Add To Collection reporting queue" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[queueOb]" />
+            </Sequence>
+          </ActivityAction>
+        </ParallelForEach>
+      </Sequence>
+      <Sequence DisplayName="Reporting" sap:VirtualizedContainerService.HintSize="932.666666666667,503.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="upaq:QueueItemData" Name="reportQResult" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ParallelForEach x:TypeArguments="upaq:QueueItemData" DisplayName="Parallel For Each Reporting Line" sap:VirtualizedContainerService.HintSize="426.666666666667,411.333333333333" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_3" Values="[ReportingQueueTasks]">
+          <ActivityAction x:TypeArguments="upaq:QueueItemData">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="upaq:QueueItemData" Name="reportQOb" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="For Each Reporting Line Body" sap:VirtualizedContainerService.HintSize="376,258.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <upaq:WaitForQueueItemAndResume StatusMessage="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Wait For Queue Item And Resume" sap:VirtualizedContainerService.HintSize="334,166.666666666667" sap2010:WorkflowViewState.IdRef="WaitForQueueItemAndResume_2" QueueItemInput="[reportQOb]" QueueItemOutput="[reportQResult]" />
+            </Sequence>
+          </ActivityAction>
+        </ParallelForEach>
+      </Sequence>
+    </Sequence>
+    <Sequence DisplayName="MoveFileToArchive" sap:VirtualizedContainerService.HintSize="974.666666666667,434.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="archiveFolderPath" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="SupplierChange_ArchiveFolder" DisplayName="Get Asset Archive Folder" sap:VirtualizedContainerService.HintSize="444,140.666666666667" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[archiveFolderPath]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:MoveFile ContinueOnError="{x:Null}" Destination="[archiveFolderPath]" DisplayName="Move File to archive" sap:VirtualizedContainerService.HintSize="444,162" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[SupplierFilePath]" />
+    </Sequence>
+  </Sequence>
+</Activity>
