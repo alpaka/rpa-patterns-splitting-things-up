@@ -1,0 +1,11 @@
+﻿{
+  "Id": "drHKZPR9yUOGVE4WsxR4gQ",
+  "Reference": "wgnUCMDM0U6zFjOBcFPzlQ/drHKZPR9yUOGVE4WsxR4gQ",
+  "Name": "Supplier Demo Tool",
+  "Type": "App",
+  "Created": "2020-12-06T11:49:22.5494079Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=20.10.4.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2020-12-06T11:49:22.5494079Z"
+}

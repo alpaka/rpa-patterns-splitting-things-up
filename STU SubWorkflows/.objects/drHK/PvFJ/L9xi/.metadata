@@ -1,0 +1,14 @@
+﻿{
+  "Id": "L9xiUziDr0W1W-MevPNyAA",
+  "Reference": "wgnUCMDM0U6zFjOBcFPzlQ/L9xiUziDr0W1W-MevPNyAA",
+  "ParentRef": "wgnUCMDM0U6zFjOBcFPzlQ/PvFJvYIU5kyG6ZCgNfuARQ",
+  "Name": "Supplier Demo Tool Main window",
+  "Type": "Screen",
+  "TaxonomyType": "Screen",
+  "Created": "2020-12-06T11:49:42.7753126Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=20.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=20.10.4.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2020-12-06T11:49:42.7753126Z"
+}
