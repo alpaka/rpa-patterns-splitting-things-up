@@ -1,6 +1,5 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CreateOrChangeSupplier" this:CreateOrChangeSupplier.CreationDate="11/15/2020" this:CreateOrChangeSupplier.Address="Magnificent Street 66" this:CreateOrChangeSupplier.Address2="Snobbyville" this:CreateOrChangeSupplier.City="Snobtown" this:CreateOrChangeSupplier.State="Ohio" this:CreateOrChangeSupplier.Zip="12345" this:CreateOrChangeSupplier.InternalName="Inti" this:CreateOrChangeSupplier.ExternalName="Exti" this:CreateOrChangeSupplier.Description="Disco" this:CreateOrChangeSupplier.NumEmployees="52" this:CreateOrChangeSupplier.IsRecurrentSupplier="True" this:CreateOrChangeSupplier.Industry="Education" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CreateOrChangeSupplier" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="AppTarget" Type="InArgument(ui:UiElement)" />
     <x:Property Name="CreationDate" Type="InArgument(x:String)" />
     <x:Property Name="Address" Type="InArgument(x:String)" />
     <x:Property Name="Address2" Type="InArgument(x:String)" />
@@ -87,19 +86,19 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="924,2234" sap2010:WorkflowViewState.IdRef="Sequence_17">
+  <Sequence DisplayName="CreateOrChangeSupplier" sap:VirtualizedContainerService.HintSize="924,2234" sap2010:WorkflowViewState.IdRef="Sequence_17">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: UiPath Demo App" sap:VirtualizedContainerService.HintSize="882,2142" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[AppTarget]" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: UiPath Demo App" sap:VirtualizedContainerService.HintSize="882,2142" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="CreateOrChangeSupplier" sap:VirtualizedContainerService.HintSize="848,1924" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence DisplayName="CreateOrChangeSupplier body" sap:VirtualizedContainerService.HintSize="848,1924" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -154,24 +153,46 @@
                   </uix:NClick>
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ChangeSupplier workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="ChangeSupplier.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="InternalName">[InternalName]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="ExternalName">[ExternalName]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Description">[Description]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="NumEmployees">[NumEmployees]</InArgument>
-                      <InArgument x:TypeArguments="x:Boolean" x:Key="IsRecurrentSupplier">[IsRecurrentSupplier]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Industry">[Industry]</InArgument>
-                      <InArgument x:TypeArguments="ui:UiElement" x:Key="AppTarget">[AppTarget]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="InternalName">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InternalName" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="ExternalName">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExternalName" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Description">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Description" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="NumEmployees">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NumEmployees" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:Boolean" x:Key="IsRecurrentSupplier">
+                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IsRecurrentSupplier" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Industry">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Industry" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CreateSupplier workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="CreateSupplier.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="CreationDate">[CreationDate]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Address">[Address]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Address2">[Address2]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="City">[City]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="State">[State]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Zip">[Zip]</InArgument>
-                      <InArgument x:TypeArguments="ui:UiElement" x:Key="AppTarget">[AppTarget]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="CreationDate">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CreationDate" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Address">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Address" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Address2">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Address2" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="City">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="City" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="State">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="State" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Zip">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Zip" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
@@ -191,13 +212,24 @@
                   </uix:NClick>
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ChangeSupplier workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="ChangeSupplier.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="InternalName">[InternalName]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="ExternalName">[ExternalName]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Description">[Description]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="NumEmployees">[NumEmployees]</InArgument>
-                      <InArgument x:TypeArguments="x:Boolean" x:Key="IsRecurrentSupplier">[IsRecurrentSupplier]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Industry">[Industry]</InArgument>
-                      <InArgument x:TypeArguments="ui:UiElement" x:Key="AppTarget">[AppTarget]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="InternalName">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InternalName" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="ExternalName">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExternalName" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Description">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Description" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="NumEmployees">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NumEmployees" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:Boolean" x:Key="IsRecurrentSupplier">
+                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IsRecurrentSupplier" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Industry">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Industry" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>

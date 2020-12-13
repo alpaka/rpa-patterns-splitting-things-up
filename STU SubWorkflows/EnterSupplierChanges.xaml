@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="EnterSupplierChanges" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="EnterSupplierChanges" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="dtSuppliers" Type="InArgument(sd:DataTable)" />
   </x:Members>
@@ -224,19 +224,42 @@
                     </Sequence>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CreateOrChangeSupplier workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="CreateOrChangeSupplier.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="ExternalName">[ExternalName]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="InternalName">[InternalName]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Description">[Description]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="NumEmployees">[NumEmployees]</InArgument>
-                        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRecurrentSupplier">[IsRecurrentSupplier]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Industry">[Industry]</InArgument>
-                        <InArgument x:TypeArguments="ui:UiElement" x:Key="AppTarget">[AppTarget]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Zip">[Zip]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="State">[State]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="City">[City]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Address2">[Address2]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Address">[Address]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="CreationDate">[CreationDate]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="CreationDate">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CreationDate" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Address">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Address" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Address2">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Address2" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="City">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="City" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="State">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="State" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Zip">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Zip" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="InternalName">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InternalName" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="ExternalName">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExternalName" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Description">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Description" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="NumEmployees">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NumEmployees" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRecurrentSupplier">
+                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IsRecurrentSupplier" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Industry">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Industry" />
+                        </InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
