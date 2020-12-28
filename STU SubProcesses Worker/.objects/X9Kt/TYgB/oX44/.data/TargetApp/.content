@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp BrowserType="Chrome" ContentHash="Imqr86YbHkSsXEuMEr-tvw" Reference="wgnUCMDM0U6zFjOBcFPzlQ/0KLEBZYn8U2EJ0tACLT0hA" Selector="&lt;html app='chrome.exe' title='UiPath Demo App'/&gt;" Url="https://www.rpasamples.com/suppliers" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">0CskzU0PhT0qPlpuvK6_DiQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="07ab0741a0280b9d727ebf785224a000.png" xmlns="">0hNSOAqKwdUGoK8Iol5NH_A</imageRef>
+</TargetApp>
