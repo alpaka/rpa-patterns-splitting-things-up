@@ -1,0 +1,12 @@
+﻿{
+  "Id": "ngpZL-p5KkecU5u7qiFpXw",
+  "Reference": "2gkb2-o8cUauosLb6Dshyg/ngpZL-p5KkecU5u7qiFpXw",
+  "ParentRef": "2gkb2-o8cUauosLb6Dshyg/049-_BNoVk2XeEjXSBH53Q",
+  "Name": "1.0.0",
+  "Type": "AppVersion",
+  "Created": "2020-12-28T14:40:31.8272233Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=20.10.4.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2020-12-28T14:40:31.8272233Z"
+}
