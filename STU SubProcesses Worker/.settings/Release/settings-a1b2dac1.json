@@ -33,7 +33,7 @@
   "UiPath.UIAutomationNext.Activities.SearchStepsWnd.Image": "True",
   "UiPath.UIAutomationNext.Activities.SearchStepsWnd.Anchors": "True",
   "UiPath.UIAutomationNext.Activities.SearchStepsWnd.IgnoreSelectorsWithIdx": "True",
-  "UiPath.UIAutomationNext.Activities.ApplicationCard.CloseMode": "Never",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.CloseMode": "IfOpenedByAppBrowser",
   "UiPath.UIAutomationNext.Activities.ApplicationCard.OpenMode": "IfNotOpen",
   "UiPath.UIAutomationNext.Activities.ApplicationCard.UserDataFolderMode": "Automatic",
   "UiPath.UIAutomationNext.Activities.ApplicationCard.UserDataFolderPath": "",
